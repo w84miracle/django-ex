@@ -20,7 +20,7 @@ def config():
     if not name and engine == engines['sqlite']:
         name = os.path.join(settings.BASE_DIR, 'db.sqlite3')
     return {
-        'ENGINE': engine,
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': name,
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
