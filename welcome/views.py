@@ -22,7 +22,7 @@ def index(request):
 def health(request):
     return HttpResponse(PageView.objects.count())
 
-def firebase(request):
+def viewfb(request):
     auth = firebase.auth()
     user = auth.sign_in_with_email_and_password('w84miracle@gmail.com', os.getenv('FIREBASE_PWD','unknown'))
     config = {
