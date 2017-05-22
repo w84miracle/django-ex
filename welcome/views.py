@@ -20,3 +20,6 @@ def index(request):
 
 def health(request):
     return HttpResponse(PageView.objects.count())
+
+def firebase(request):
+    return render(request, 'welcome/firebase.html')
