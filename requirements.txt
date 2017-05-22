@@ -5,3 +5,4 @@ psycopg2==2.6.1
 whitenoise==3.0
 mysql-python==1.2.5
 firebase-admin==2.0.0
+Pyrebase==3.0.27
