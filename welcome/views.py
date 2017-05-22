@@ -23,8 +23,6 @@ def health(request):
     return HttpResponse(PageView.objects.count())
 
 def viewfb(request):
-    auth = firebase.auth()
-    user = auth.sign_in_with_email_and_password('w84miracle@gmail.com', os.getenv('FIREBASE_PWD','unknown'))
     config = {
       "apiKey": os.getenv('FIREBASE_API','unknown'),
       "authDomain": "tapirlabs.firebaseapp.com",
@@ -32,6 +30,8 @@ def viewfb(request):
       "storageBucket": "tapirlabs.appspot.com"
     }
     firebase = pyrebase.initialize_app(config)
+    auth = firebase.auth()
+    user = auth.sign_in_with_email_and_password('w84miracle@gmail.com', os.getenv('FIREBASE_PWD','unknown'))
     db = firebase.database()
     db.child("users").child("Morty")  
     data = {"name": "Mortimer 'Morty' Smith"}
