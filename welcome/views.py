@@ -33,9 +33,8 @@ def viewfb(request):
     auth = firebase.auth()
     user = auth.sign_in_with_email_and_password('w84miracle@gmail.com', os.getenv('FIREBASE_PWD','unknown'))
     db = firebase.database()
-    db.child("users").child("Morty")  
     data = {"name": "Mortimer 'Morty' Smith"}
-    db.child("users").push(data)
+    db.child("users").child("Morty").set(data,user['idToken']) 
     return render(request, 'welcome/firebase.html', {
-        'users':db.child("users").get().val()
+        'users':db.child("users").child("Morty").get(user['idToken']).val()['name']
     })
