@@ -18,6 +18,8 @@ def index(request):
         'database': database.info(),
         'count': PageView.objects.count()
     })
+def fbbot(request):
+    return "Hello"
 
 def health(request):
     return HttpResponse(PageView.objects.count())

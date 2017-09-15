@@ -63,3 +63,7 @@ tcl/
 Include/
 Scripts/
 pip-selfcheck.json
+
+bin/
+include/
+local/

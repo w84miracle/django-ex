@@ -10,6 +10,7 @@ urlpatterns = [
 
     url(r'^$', index),
     url(r'^health$', health),
+    url(r'^fb$', fbbot),
     url(r'^firebase$', viewfb),
     url(r'^admin/', include(admin.site.urls)),
 ]
