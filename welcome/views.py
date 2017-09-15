@@ -19,7 +19,7 @@ def index(request):
         'count': PageView.objects.count()
     })
 def fbbot(request):
-    return "Hello"
+    return HttpResponse("Hello")
 
 def health(request):
     return HttpResponse(PageView.objects.count())
